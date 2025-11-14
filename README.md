@@ -1,20 +1,49 @@
-# 🤖 Agentic GTM System (AI Sales Follow-up Automation)
+# Agentic GTM Automation (Gemini + Twilio)
 
-## 🧠 Overview
-This project simulates a real-world **Go-To-Market (GTM) follow-up automation system** using Python.  
-It reads CRM data from a CSV file and automatically decides whether to follow up with leads through **WhatsApp** or **Voice calls (TTS)**.
-
-The system uses **offline voice synthesis** (`pyttsx3`) to generate realistic audio follow-ups without requiring internet or API keys.
-
----
-
-## ⚙️ Features
-- Reads lead data from a CRM CSV file
-- Automatically decides if a follow-up is due (last contact > 3 days)
-- Chooses the right channel (WhatsApp or Voice)
-- Simulates message sending or generates a voice call audio
-- Logs all outcomes to a CSV file for reporting
+This project is an end-to-end **Agentic GTM Automation System** that:
+- Reads CRM data
+- Decides who requires follow-up
+- Generates personalized messages using **Gemini LLM**
+- Sends real WhatsApp messages via **Twilio API**
+- Logs provider responses (SID, status, timestamp)
+- Saves voice call audio for alternate channel tests
+- Supports inbound reply handling (webhook-ready)
 
 ---
 
-## 📂 Folder Structure
+## 🚀 Features
+
+### 1. Automated Lead Follow-ups
+Decides whether a lead needs follow-up based on:
+- Last contact date
+- Days since last interaction
+- Lead context (last message)
+
+### 2. AI-Powered Personalization (Gemini)
+The message is generated dynamically using:
+- Lead name
+- Last message
+- Days since last contact
+
+### 3. Real WhatsApp Delivery via Twilio
+Sends:
+- WhatsApp messages
+- Receives Twilio SID + Status
+- Logs complete provider response
+
+### 4. Logging System
+Everything is stored in `output_log.csv`:
+- Lead info
+- Channel used
+- LLM prompt
+- LLM output
+- Provider-side message SID
+- Timestamp
+
+### 5. Inbound Reply Demo
+A mock webhook example is included to show how replies could be processed.
+
+---
+
+## 📁 Project Structure
+
